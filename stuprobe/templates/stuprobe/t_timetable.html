@@ -1,0 +1,44 @@
+{% extends 'stuprobe/base.html' %}
+
+{% block content %}
+    
+<b>Timetable</b>
+<div class="card">
+    <table width="100%" cellspacing="0">
+        <thead class="cf">
+            <tr>
+
+                <th>      </th>
+                <th>10:00 - 10:55</th>
+                <th>10:55 - 11:50</th>
+               
+                <th><b>Break</b> </th>
+                <th>12:35 - 1:30</th>
+                <th>1:30 - 2:25</th>
+               
+                <th><b>Lunch</b></th>
+                <th>2:45 - 3:40</th>
+                <th>3:40 - 4:45</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in class_matrix %}
+            <tr>
+                {% for j in i %}
+                    {% if forloop.counter == 1 %}
+                        <td><b>{{ j }}</b></td>
+                    {% elif j == True %}
+                        <td></td>
+                    {% else %}
+                       <td>{{ j.assign.class_id_id }} {{ j.assign.course.shortname }}</td>
+                
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

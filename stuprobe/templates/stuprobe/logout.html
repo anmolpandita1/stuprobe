@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Login</title>
+      {% load static %}
+      <link href="{% static '/stuprobe/css/custom.css' %}" rel="stylesheet">
+   </head>
+   <body>
+      <nav>
+         <div class="nav-logo">
+            <a href="{% url 'index' %}">Stuprobe</a>
+         </div>
+      </nav>
+      <div class="main-grid">
+         
+         <b class="welcome-msg">Welcome to Stuprobe!</b>
+         
+         <div class="content-grid">
+            
+               <div class="card bg">
+                  <h3>Login to Stuprobe</h3>
+                  <div class="">
+                     <a class="btn btn-primary" role="button" href="/home">Login</a>
+                  </div>
+               </div>
+            
+            
+               <div class="card bg">
+                  <h3>Signup as a <b>Student</b></h3>
+                  <div class="">
+                     <a class="btn btn-primary" role="button" href="/signup/student">Sign Up</a>
+                  </div>
+               </div>
+           
+               <div class="card bg">
+                  <h3>Signup as a <b>Teacher</b></h3>
+                  <div class="">
+                     <a class="btn btn-primary" role="button" href="/signup/teacher">Sign Up</a>
+                  </div>
+               </div>
+            
+         </div>
+      </div>
+   </body>
+</html>
+

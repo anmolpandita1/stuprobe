@@ -1,0 +1,1 @@
+cd C:\project\be\engine\monitors &  workon env & python folder_monitor.py "C:/project/be/data/classroom_uploads/" "C:/project/be/engine/embeddings.py"

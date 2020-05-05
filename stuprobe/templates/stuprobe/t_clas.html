@@ -1,0 +1,33 @@
+{% extends 'stuprobe/base.html' %}
+{% block content %}
+    <b>List of Classes</b>
+    <div class="card">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Course</th>
+                        <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for ass in teacher1.assign_set.all %}
+                    <tr>
+                        <td>{{ ass.class_id }}</td>
+                        <td>{{ ass.course }}</td>
+                        <td>
+                          <a class="btn" href="{% url 't_form' ass.id %}" role="button">Enter Attendance</a>
+                            <a class="btn" href="{% url 't_student' ass.id %}">View Students</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                            <p>teacher has no courses</p>
+                    {% endfor %}
+
+                  </tbody>
+                </table>
+              </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Homepage</title>
+      <link href="{% static '/stuprobe/css/custom.css' %}" rel="stylesheet">
+   </head>
+   <body>
+      <nav>
+         <div class="nav-logo">
+            <a href="{% url 'home' %}">Stuprobe</a>
+         </div>
+         <div class="nav-end">
+            <div class="nav-username">
+               {% if request.user.is_student %}
+               <item>
+                  <span>{{request.user.student.name}}</span>
+               </item>
+               {% elif request.user.is_teacher %}
+               <item>
+                  <span>{{request.user.teacher.name}}</span>
+               </item>
+               {% endif %}
+               <a class="logout" href="/accounts/logout">
+                  Logout
+               </a>
+            </div>
+         </div>       
+      </nav>
+      
+      <div class="main-grid">
+         <div class="welcome-msg">
+            <div>Welcome,</div> 
+            {% if request.user.is_student %}
+            <b>{{ request.user.student.name }}</b>
+            {% elif request.user.is_teacher %}
+            <b>{{ request.user.teacher.name }}</b>
+            {% endif %}
+         </div>
+         
+
+
+         <div class="content-grid">
+               <div class="card">
+                  {% if request.user.is_student %}
+                  <a href="{% url 'attendance' request.user.student.GRN %}">
+                  {% elif request.user.is_teacher %}
+                  <a href="{% url 't_clas' request.user.teacher.id %}">
+                  {% endif %}
+                  <img width="100px" height="100px" class="card-img-top" src="{% static 'stuprobe/images/attendance.png' %}" alt="attendance-image">
+                  </a>
+                  <div>
+                     <b>Attendance</b>
+                     <p>View the attendance status for each of your courses. The attendance of each course is
+                        also displayed as list of classes that were conducted.
+                     </p>
+                  </div>
+                  <div>
+                     {% if request.user.is_student %}
+                     <a class="btn" role="button" href="{% url 'attendance' request.user.student.GRN %}"> View Attendance</a>
+                     {% elif request.user.is_teacher %}
+                     <a class="btn" role="button" href="{% url 't_clas' request.user.teacher.id %}">Attendance</a>
+                     {% endif %}
+                  </div>
+               </div>
+
+            
+               <div class="card">
+                  {% if request.user.is_student %}
+                  <a href="{% url 'timetable' request.user.student.class_id_id %}">
+                  {% elif request.user.is_teacher %}
+                  <a href="{% url 't_timetable' request.user.teacher.id %}">
+                  {% endif %}
+                  <img width="130px" height="100px" src="{% static 'stuprobe/images/timetable.png' %}" alt="time-table-image">
+                  </a>
+                  <div>
+                     <b>TimeTable</b>
+                     <p>View the timetable in a tabular form. The timetable displays all the courses of the
+                        student and the time and day at which they are conducted.
+                     </p>
+                  </div>
+                  <div>
+                     {% if request.user.is_student %}
+                     <a class="btn" role="button" href="{% url 'timetable' request.user.student.class_id_id %}">View TimeTable</a>
+                     {% elif request.user.is_teacher %}
+                     <a class="btn" role="button" href="{% url 't_timetable' request.user.teacher.id %}">View TimeTable</a>
+                     {% endif %}
+                  </div>
+               </div>
+           
+            {% if request.user.is_student %}
+            
+               <div>
+                  <div>
+                     <b>Register Images</b>
+                     <p>Register your images <i>(Works only once!)</i> , please do it once and correctly.</p>
+                  </div>
+                  <div>
+                     <a class="btn" role="button" href="{% url 'form' %}">Register</a>
+                  </div>
+               </div>
+            
+            {% endif %}
+         </div>
+      </div>
+   </div>
+      </div>
+      
+   </body>
+</html>
+

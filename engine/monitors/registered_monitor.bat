@@ -1,0 +1,1 @@
+cd C:\project\be\engine\monitors &  workon env & python folder_monitor.py "C:/project/be/data/registered/" "C:/project/be/engine/registered_embeddings.py"

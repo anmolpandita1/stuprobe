@@ -1,0 +1,40 @@
+{% load static %}
+{% load crispy_forms_tags  %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <title>Login</title>
+
+
+    <link href="{% static '/stuprobe/css/custom.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-logo">
+        <a href="{% url 'index' %}">Stuprobe</a>
+     </div>
+    </nav>
+    <div class="flex-card bg">
+      <span class="shadow">
+        <b>Login</b> 
+        <form method="post">
+          {% csrf_token %}
+          {{ form|crispy}}
+          <button  class="btn" type="submit">Login</button>
+        </form>
+      </span>
+      
+    </div>
+
+   
+
+  </body>
+
+</html>

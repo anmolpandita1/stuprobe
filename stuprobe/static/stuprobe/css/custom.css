@@ -1,0 +1,310 @@
+@font-face {
+    font-family: 'Roboto';
+    src:  url('../fonts/Roboto-Regular.woff') format('woff');
+}  
+@font-face {
+    font-family: 'Roboto-Light';
+    src:  url('../fonts/Roboto-Light.woff') format('woff');
+}  
+
+
+
+html, body{
+    margin:0;
+
+    font-family: Roboto-Light;
+    font-size: 24px;
+    color: #5f6368;
+
+    background: #fff;
+}
+i{
+    font-size: large;
+}
+a{
+    display: inline-block;
+    all: unset;
+    cursor: pointer;
+
+    padding: .4em;
+    margin: auto;
+}
+img{
+    display: flex;
+    width: 100px;
+    height: 100px;  
+}
+h3{
+    margin-top: 1em;
+}
+input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #fbbc05;
+}
+select,option{
+    font-size: .8em;
+    border: 1px solid #fbbc05;
+}
+form > div {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+strong{
+    font-family: Roboto-Light;
+    background: #c2635b;
+    border: 2px solid #c2635b;
+    border-radius: .4em;
+    color: #fff;
+}
+small {
+    display: inline-block;
+    font-size: small;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+.bg{
+    background: rgb(252, 250, 250);
+    border: 2px dashed #f8e5ab;
+}
+
+
+b,.btn{
+    font-family: Roboto;
+}
+.btn{
+    border-left: 2px solid #4285f4;
+    border-right: 2px solid #4285f4;
+    border-radius: .40em;
+}
+.btn:hover{
+    background: #4285f4;
+    color: #fff;
+    box-shadow: 1px 4px 4px rgba(0,0,0,0.20);
+}
+
+
+
+
+
+
+
+
+
+.link{
+    border-left: 2px solid #4285f4;
+    border-right: 2px solid #4285f4;
+    border-radius: .4em;
+}
+.link:hover{
+    background: #4285f4;
+    color: #fff;
+}
+.danger{
+    font-family: Roboto;
+    background: #c2635b;
+    border: 2px solid #c2635b;
+    border-radius: .4em;
+    color: #fff;
+}
+.success{
+    font-family: Roboto;
+    background: #4b9960;
+    border: 2px solid #4b9960;
+    border-radius: .4em;
+    color: #fff;
+}
+
+
+
+
+
+
+
+.logout {
+    border-left: 1px solid #5f6368;
+}
+.logout:hover{
+    background-color: #fdc82a;
+    color: #fff;
+
+    border-left: 1px solid #fdc82a;
+    border-radius: .4em;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.20);
+}
+
+
+
+
+
+
+
+
+
+nav{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    
+    border: 1px solid #fff;
+    background-color:   #fff;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.20);    
+}
+.nav-end{
+    margin-left: auto;
+    padding: .4em;
+   
+    display: flex;
+    align-items: center;
+}
+.nav-logo{
+    display: inline;
+    padding: .4em;
+    background-color: #fbbc05;
+
+    border: 1px solid #fbbc05;
+    border-radius: .40em;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.20);
+    
+    font-family: sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+} 
+.nav-logo:hover{
+    border: 1px solid #fbbc05;
+    background-color: #fbbc05;
+    box-shadow: 3px 6px 8px rgba(0,0,0,0.20);
+}
+.nav-username{
+    display: inline;
+    padding: .4em;
+} 
+
+
+
+
+
+
+.card{
+    padding: 1em;
+    border-radius: .4em;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.20);
+}
+
+
+
+
+
+
+
+
+
+
+aside{
+    color: #202124;
+    display: inline-block;  
+}
+
+aside > a{
+    display: block;
+    margin: .4em;
+    padding: .4em;
+
+    font-size: 100%;
+    border-radius: 0px 99px 100px 0px / 0px 100px 100px 0px;
+}
+aside > a:hover{
+    padding: .4em;
+    background: #feefc3;
+}
+
+
+
+
+
+
+
+.welcome-msg{
+    padding: 1em;
+}
+.main-grid{
+    display: grid;
+    grid-template-columns: .5fr 2fr ;
+}
+
+.content-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px; 
+    padding: 1em;
+}
+.content-padding{
+    padding: 1em;
+}
+
+
+
+
+.flex-card{
+    display: flex;
+    justify-content: center;
+
+    height: 100%;
+    margin: 2em;
+    padding: 2em;
+
+    border: 2px dashed #f8e5ab;
+    border-radius: .40em;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.20);
+}
+
+
+.flex-card > * {
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+table{
+    border-collapse:separate; 
+    border-spacing:0 .4em; 
+    border: 2px dashed #f8e5ab;
+    border-radius: .4em;
+    padding: 0.40em;
+
+    font-size: large;
+}
+tbody{
+    padding: .4em;
+    margin: .4em;
+}
+th{
+    text-align: start;
+    border-bottom: 2px dotted #f8e5ab;
+}
+tr{
+    padding: .4em;
+}
+td{
+    
+    margin: .4em;
+    padding: .4em;
+}
+

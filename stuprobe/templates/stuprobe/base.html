@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      {% if title %}
+        <title>Stuprobe - {{ title }}</title>
+      {% else %}
+        <title>Stuprobe</title>
+      {% endif %}
+
+      <link href="{% static '/stuprobe/css/custom.css' %}" rel="stylesheet">
+      {% block head %}
+      {% endblock %}
+   </head>
+   <body>
+      <nav>
+         <div class="nav-logo">
+            <a href="{% url 'home' %}">Stuprobe</a>
+         </div>
+         <div class="nav-end">
+            <div class="nav-username">
+               {% if request.user.is_student %}
+               <item>
+                  <span>{{request.user.student.name}}</span>
+               </item>
+               {% elif request.user.is_teacher %}
+               <item>
+                  <span>{{request.user.teacher.name}}</span>
+               </item>
+               {% endif %}
+               <a class="logout" href="/accounts/logout">
+                  Logout
+               </a>
+            </div>
+         </div>       
+      </nav>
+      <div class="main-grid">
+         <aside>
+            
+               {% if request.user.is_student %}
+               
+                  <a href="{% url 'attendance' request.user.student.GRN %}">
+                  <span>Attendance</span>
+                  </a>
+               
+              
+            
+                  <a href="{% url 'timetable' request.user.student.class_id_id %}">
+                  <span>Time Table</span>
+                  </a>
+              
+               {% elif request.user.is_teacher %}
+               
+                  <a href="{% url 't_clas' request.user.teacher.id %}">
+                  <span>Attendance</span>
+                  </a>
+              
+         
+                  <a href="{% url 't_timetable' request.user.teacher.id %}">
+                  <span>Time Table</span>
+                  </a>
+             
+               {% endif %}
+          
+         </aside>
+   
+         <div class="content-padding">
+            <div>
+               
+               {% block content %}
+               {% endblock %}
+            </div>
+            
+         </div>
+      </div>
+
+      
+   </body>
+</html>
+
